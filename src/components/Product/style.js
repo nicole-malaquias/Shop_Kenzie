@@ -20,6 +20,11 @@ const ContainerProduto = styled.div`
       display: inline;
       animation: 1s ease-in move;
     }
+
+    img {
+      height: 100px;
+      width: 100px;
+    }
   }
   @keyframes move {
     from {

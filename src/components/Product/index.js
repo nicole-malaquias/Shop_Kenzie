@@ -6,13 +6,14 @@ import ContainerProduto from "./style";
 const Product = ({ product, isRemovable = false }) => {
   const dispatch = useDispatch();
 
-  const { id, name, price } = product;
+  const { id, name, price, image } = product;
 
   return (
     <ContainerProduto>
       <div className="card">
         <h3>{name}</h3>
         <h3>R$ {price}</h3>
+        <img src={image} />
         <div className="btn">
           {isRemovable ? (
             <button onClick={() => dispatch(removeFromCart(id))}>
