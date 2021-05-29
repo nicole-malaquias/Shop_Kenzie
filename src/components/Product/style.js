@@ -11,6 +11,7 @@ const ContainerProduto = styled.div`
     display: none;
     position: relative;
     height: 30px;
+    width: 100px;
     background: #3f8d89;
     border: none;
     color: #ffffff;

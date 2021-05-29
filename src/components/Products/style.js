@@ -6,8 +6,8 @@ const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-
+  align-items: flex-start;
+  height: 100vh;
   div + div {
     margin: 5px;
   }

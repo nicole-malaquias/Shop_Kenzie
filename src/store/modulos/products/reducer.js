@@ -6,7 +6,8 @@ import phone from "../../../assests/phone.png";
 import tv from "../../../assests/tv.png";
 import wmachine from "../../../assests/wmachine.png";
 import Kindle from "../../../assests/kindle.png";
-
+import aspirador from "../../../assests/aspirador.png";
+import arcondicionado from "../../../assests/arcondicionado.png";
 const defaultState = [
   { id: 1, name: "Geladeira", price: 200, image: freezer },
   { id: 2, name: "Fogão", price: 640, image: cooktop },
@@ -16,7 +17,8 @@ const defaultState = [
   { id: 6, name: "Celular", price: 340, image: phone },
   { id: 7, name: "Notebook", price: 730, image: notebook },
   { id: 8, name: "Cafeteira", price: 80, image: coffee },
-  { id: 9, name: "Cama", price: 280, image: "" },
+  { id: 9, name: "Aspirador", price: 280, image: aspirador },
+  { id: 10, name: "Ar Condicionado", price: 280, image: arcondicionado },
 ];
 
 const productsReducer = (state = defaultState, action) => {
