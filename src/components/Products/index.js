@@ -5,13 +5,22 @@ import Menu from "../Menu ";
 import Container from "./style";
 const Products = () => {
   const products = useSelector((store) => store.products);
+  const search = useSelector((store) => store.search);
 
   return (
     <Container>
       <Menu />
-      {products.map((product) => (
-        <Product key={product.id} product={product} />
-      ))}
+      {console.log("valor", search)}
+      {search === ""
+        ? products.map((product) => (
+            <Product key={product.id} product={product} />
+          ))
+        : products.map(
+            (product) =>
+              product.name === search && (
+                <Product key={product.id} product={product} />
+              )
+          )}
     </Container>
   );
 };

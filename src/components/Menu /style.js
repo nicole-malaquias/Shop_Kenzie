@@ -20,6 +20,12 @@ const Container = styled.div`
       sans-serif;
     color: gray;
   }
+  textarea:focus,
+  input:focus {
+    box-shadow: 0 0 0 0;
+    outline: none;
+  }
+
   button {
     cursor: pointer;
     height: 32px;

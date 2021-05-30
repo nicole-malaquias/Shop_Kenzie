@@ -22,8 +22,6 @@ const defaultState = [
 ];
 
 const productsReducer = (state = defaultState, action) => {
-  console.log("action do products", action);
-
   switch (action.type) {
     case "ADD_PROD":
       const { id } = action;

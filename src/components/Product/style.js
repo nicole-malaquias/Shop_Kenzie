@@ -6,7 +6,7 @@ const ContainerProduto = styled.div`
   justify-content: center;
   text-align: center;
   width: 150px;
-
+  border-top: 2px solid gray;
   button {
     display: none;
     position: relative;
