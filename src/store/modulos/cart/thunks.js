@@ -1,10 +1,12 @@
 import { addToCart } from "./action";
 import { removeFromCart } from "./action";
-export const addToCarThunk = (product) => {
-  return (dispatch, getStore) => {
-    console.log(getStore);
-    dispatch(addToCart(product));
-  };
+
+export const addToCarThunk = (product) => (dispatch, getStore) => {
+  console.log(getStore);
+  const list = JSON.parse(localStorage.getItem("cart")) || [];
+  list.push(product);
+  localStorage.setItem("cart", JSON.stringify(list));
+  dispatch(addToCart(product));
 };
 
 export const removeFromCartThunk = (id) => (dispatch, getStore) => {
