@@ -4,9 +4,8 @@ const reducerCart = (state = [], action) => {
       const { product } = action;
       return [...state, product];
     case "REMOVE":
-      const { id } = action;
-      const listaNova = state.filter((item) => item.id !== id);
-      return listaNova;
+      const { lista } = action;
+      return lista;
     default:
       return state;
   }

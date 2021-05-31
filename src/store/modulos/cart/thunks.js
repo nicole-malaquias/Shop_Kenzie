@@ -2,7 +2,6 @@ import { addToCart } from "./action";
 import { removeFromCart } from "./action";
 
 export const addToCarThunk = (product) => (dispatch, getStore) => {
-  console.log(getStore);
   const list = JSON.parse(localStorage.getItem("cart")) || [];
   list.push(product);
   localStorage.setItem("cart", JSON.stringify(list));
