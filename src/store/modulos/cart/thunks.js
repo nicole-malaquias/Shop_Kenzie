@@ -11,6 +11,6 @@ export const addToCarThunk = (product) => (dispatch, getStore) => {
 export const removeFromCartThunk = (id) => (dispatch, getStore) => {
   const { cart } = getStore();
   const list = cart.filter((product) => product.id !== id);
-  localStorage.setItem("cart", JSON.stringfy(list));
+  localStorage.setItem("cart", JSON.stringify(list));
   dispatch(removeFromCart(list));
 };
