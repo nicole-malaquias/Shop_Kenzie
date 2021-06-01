@@ -6,7 +6,7 @@ import Menu from "../Menu ";
 
 import Container from "./style";
 const Cart = () => {
-  const cart = useSelector((store) => store.cart);
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
   return (
     <Container>
       <Menu />
