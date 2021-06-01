@@ -1,16 +1,16 @@
-import { StrictMode } from "react";
-import { useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 import Product from "../Product";
 import Menu from "../Menu ";
 
 import Container from "./style";
+
 const Cart = () => {
   const [carrinho, setCarrinho] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
 
   const cart = JSON.parse(localStorage.getItem("cart"));
+
   useEffect(() => {
     const temp = JSON.parse(localStorage.getItem("cart"));
     setCarrinho(temp);
