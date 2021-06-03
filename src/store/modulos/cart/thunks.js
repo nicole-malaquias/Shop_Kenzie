@@ -3,7 +3,7 @@ import { removeFromCart } from "./action";
 
 export const addToCarThunk = (product) => (dispatch, getStore) => {
   const list = JSON.parse(localStorage.getItem("cart")) || [];
-  product.id = list.length !== 0 ? list[list.length].id + 1 : 1;
+  product.id = list.length !== 0 ? list[list.length - 1].id + 1 : 1;
   list.push(product);
   localStorage.setItem("cart", JSON.stringify(list));
   dispatch(addToCart(product));
