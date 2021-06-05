@@ -26,7 +26,9 @@ const Cart = () => {
         <Product key={product.id} product={product} isRemovable />
       ))}
       <div className="total">
-        R$ {cart.reduce((acc, item) => (acc = item.price), 0)}
+        <span> Valor total:</span>
+        {console.log(cart)}
+        <br></br> R$ {cart.reduce((acc, item) => (acc += item.price), 0)}
       </div>
     </Container>
   );

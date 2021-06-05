@@ -18,13 +18,14 @@ const Container = styled.div`
     margin: 3px;
   }
   .total {
-    width: 100px;
+    text-align: center;
+    width: 200px;
     height: 100px;
     border: 3px solid red;
     font-size: 30px;
     position: absolute;
     right: 50px;
-    bottom: 0;
+    top: 100px;
   }
 `;
 
