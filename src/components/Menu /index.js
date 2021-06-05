@@ -13,7 +13,10 @@ const Menu = () => {
   const sendTo = (path) => {
     history.push(path);
   };
-
+  const handlerSearch = () => {
+    dispatch(ADD_INPUT(input));
+    setInput("");
+  };
   return (
     <Container>
       <div className="menu">
@@ -25,7 +28,7 @@ const Menu = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button type="submit" onClick={() => dispatch(ADD_INPUT(input))}>
+        <button type="submit" onClick={handlerSearch}>
           Procurar
         </button>
         <div className="carrinho" onClick={() => sendTo("/Carrinho")}>
