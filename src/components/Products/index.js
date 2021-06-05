@@ -5,7 +5,9 @@ import Menu from "../Menu ";
 import Container from "./style";
 
 const Products = () => {
-  const products = useSelector((store) => store.products);
+  const bridge = useSelector((store) => store.products);
+
+  const [products, setProduct] = useState(bridge);
   const search = useSelector((store) => store.search);
   const [ordena, setOrdena] = useState("");
 
@@ -13,6 +15,78 @@ const Products = () => {
     var select = document.getElementById("Ordenar");
     var value = select.options[select.selectedIndex].value;
     setOrdena(value);
+  };
+  const OrdenaMaior = () => {
+    const list = [...products];
+    return (
+      <>
+        {list
+          .sort((a, b) => b.price - a.price)
+          .map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
+      </>
+    );
+  };
+  const OrdenaMenor = () => {
+    const list = [...products];
+    return (
+      <>
+        {list
+          .sort((a, b) => a.price - b.price)
+          .map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
+      </>
+    );
+  };
+  const all = () => {
+    const list = [...products];
+    return (
+      <>
+        {list.map((product) => (
+          <Product key={product.id} product={product} />
+        ))}
+      </>
+    );
+  };
+  const Filter = () => {
+    const list = [...products];
+    console.log("chegou");
+    return (
+      <>
+        {list.map(
+          (product) =>
+            product.name === search ||
+            (product.type === search && (
+              <Product key={product.id} product={product} />
+            ))
+        )}
+      </>
+    );
+  };
+
+  const FiltroOrdenaMaior = () => {
+    const list = products
+      .sort((a, b) => b.price - a.price)
+      .map(
+        (product) =>
+          product.name === search ||
+          (product.type === search && (
+            <Product key={product.id} product={product} />
+          ))
+      );
+  };
+  const FiltroOrdenaMenor = () => {
+    const list = products
+      .sort((a, b) => a.price - b.price)
+      .map(
+        (product) =>
+          product.name === search ||
+          (product.type === search && (
+            <Product key={product.id} product={product} />
+          ))
+      );
   };
 
   return (
@@ -26,43 +100,12 @@ const Products = () => {
         </select>
       </div>
 
-      {search === ""
-        ? products.map((product) => (
-            <Product key={product.id} product={product} />
-          ))
-        : products.map(
-            (product) =>
-              product.name === search ||
-              (product.type === search && (
-                <Product key={product.id} product={product} />
-              ))
-          )}
-
-      {ordena === "Menor" &&
-        search === "" &&
-        products
-          .sort((a, b) => a.price - b.price)
-          .map((product) => <Product key={product.id} product={product} />)}
-
-      {ordena === "Maior" &&
-        search === "" &&
-        products
-          .sort((a, b) => b.price - a.price)
-          .map((product) => <Product key={product.id} product={product} />)}
-
-      {search !== "" && ordena === "Menor" && console.log("oi")}
-
-      {search !== "" &&
-        ordena === "Maior" &&
-        products
-          .sort((a, b) => b.price - a.price)
-          .map(
-            (product) =>
-              product.name === search ||
-              (product.type === search && (
-                <Product key={product.id} product={product} />
-              ))
-          )}
+      {search === "" && ordena === "" && all()}
+      {search === "" && ordena === "Maior" && OrdenaMaior()}
+      {search === "" && ordena === "Menor" && OrdenaMenor()}
+      {search !== "" && Filter()}
+      {search !== "" && ordena === "Maior" && FiltroOrdenaMaior()}
+      {search !== "" && ordena === "Menor" && FiltroOrdenaMenor()}
     </Container>
   );
 };

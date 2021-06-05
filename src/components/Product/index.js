@@ -5,10 +5,19 @@ import {
 } from "../../store/modulos/cart/thunks";
 import ContainerProduto from "./style";
 
-const Product = ({ product, isRemovable = false }) => {
+const Product = ({ product, isRemovable = false, trava, setTrava }) => {
   const dispatch = useDispatch();
 
   const { id, name, price, image } = product;
+
+  const handleRemove = () => {
+    dispatch(removeFromCartThunk(id));
+    setTrava(!trava);
+  };
+
+  const handleAdd = () => {
+    dispatch(addToCarThunk(product));
+  };
 
   return (
     <ContainerProduto>
@@ -19,17 +28,11 @@ const Product = ({ product, isRemovable = false }) => {
         <img src={image} />
         <div className="btn">
           {isRemovable ? (
-            <button
-              className="btn produt"
-              onClick={() => dispatch(removeFromCartThunk(id))}
-            >
+            <button className="btn produt" onClick={handleRemove}>
               Remover item do carrinho
             </button>
           ) : (
-            <button
-              className="btn produt"
-              onClick={() => dispatch(addToCarThunk(product))}
-            >
+            <button className="btn produt" onClick={handleAdd}>
               Adicionar item no carrinho
             </button>
           )}
