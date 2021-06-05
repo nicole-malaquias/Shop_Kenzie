@@ -9,16 +9,52 @@ import Kindle from "../../../assests/kindle.png";
 import aspirador from "../../../assests/aspirador.png";
 import arcondicionado from "../../../assests/arcondicionado.png";
 const defaultState = [
-  { id: 1, name: "Geladeira", price: 200, image: freezer },
-  { id: 2, name: "Fogão", price: 640, image: cooktop },
-  { id: 3, name: "Máquina de lavar", price: 420, image: wmachine },
-  { id: 4, name: "Kindle", price: 450, image: Kindle },
-  { id: 5, name: "Televisor", price: 500, image: tv },
-  { id: 6, name: "Celular", price: 340, image: phone },
-  { id: 7, name: "Notebook", price: 730, image: notebook },
-  { id: 8, name: "Cafeteira", price: 80, image: coffee },
-  { id: 9, name: "Aspirador", price: 280, image: aspirador },
-  { id: 10, name: "Ar Condicionado", price: 280, image: arcondicionado },
+  {
+    id: 1,
+    name: "Geladeira",
+    price: 200,
+    image: freezer,
+    type: "eletro domestico",
+  },
+  {
+    id: 2,
+    name: "Fogão",
+    price: 640,
+    image: cooktop,
+    type: "eletro domestico",
+  },
+  {
+    id: 3,
+    name: "Máquina de lavar",
+    price: 420.0,
+    image: wmachine,
+    type: "eletro domestico",
+  },
+  { id: 4, name: "Kindle", price: 450, image: Kindle, type: "eletronico" },
+  { id: 5, name: "Televisão", price: 500, image: tv, type: "eletro domestico" },
+  { id: 6, name: "Celular", price: 340, image: phone, type: "eletronico" },
+  { id: 7, name: "Notebook", price: 730, image: notebook, type: "eletronico" },
+  {
+    id: 8,
+    name: "Cafeteira",
+    price: 80,
+    image: coffee,
+    type: "eletro domestico",
+  },
+  {
+    id: 9,
+    name: "Aspirador",
+    price: 280,
+    image: aspirador,
+    type: "eletro domestico",
+  },
+  {
+    id: 10,
+    name: "Ar Condicionado",
+    price: 280,
+    image: arcondicionado,
+    type: "eletro domestico",
+  },
 ];
 
 const productsReducer = (state = defaultState, action) => {

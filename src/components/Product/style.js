@@ -7,6 +7,7 @@ const ContainerProduto = styled.div`
   text-align: center;
   width: 150px;
   border-top: 2px solid gray;
+  height: 250px;
   button {
     display: none;
     position: relative;
@@ -19,7 +20,7 @@ const ContainerProduto = styled.div`
   .card:hover {
     button {
       display: inline;
-      animation: 1s ease-in move;
+      animation: 1s move;
     }
 
     img {
@@ -29,7 +30,7 @@ const ContainerProduto = styled.div`
   }
   @keyframes move {
     from {
-      top: -15px;
+      top: -5px;
     }
     to {
       top: 0px;

@@ -12,6 +12,7 @@ const Container = styled.div`
   background: #ed4f1c;
 
   input {
+    text-align: center;
     height: 30px;
     width: 300px;
     border: none;
