@@ -15,14 +15,21 @@ const Product = ({ product, isRemovable = false }) => {
       <div className="card">
         <h3>{name}</h3>
         <h3>R$ {price}</h3>
+        <h4>Até em 2x de {price / 2}</h4>
         <img src={image} />
         <div className="btn">
           {isRemovable ? (
-            <button onClick={() => dispatch(removeFromCartThunk(id))}>
+            <button
+              className="btn produt"
+              onClick={() => dispatch(removeFromCartThunk(id))}
+            >
               Remover item do carrinho
             </button>
           ) : (
-            <button onClick={() => dispatch(addToCarThunk(product))}>
+            <button
+              className="btn produt"
+              onClick={() => dispatch(addToCarThunk(product))}
+            >
               Adicionar item no carrinho
             </button>
           )}
