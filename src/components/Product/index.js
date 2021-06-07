@@ -25,7 +25,9 @@ const Product = ({ product, isRemovable = false, trava, setTrava }) => {
         <h3>{name}</h3>
         <h3>R$ {price}</h3>
         <h4>Até em 2x de {price / 2}</h4>
-        <img src={image} />
+        <div className="zoom">
+          <img src={image} className="img-responsive" />
+        </div>
         <div className="btn">
           {isRemovable ? (
             <button className="btn produt" onClick={handleRemove}>

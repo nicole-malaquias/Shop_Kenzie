@@ -41,10 +41,9 @@ const Products = () => {
     );
   };
   const all = () => {
-    const list = [...products];
     return (
       <>
-        {list.map((product) => (
+        {products.map((product) => (
           <Product key={product.id} product={product} />
         ))}
       </>
@@ -65,7 +64,6 @@ const Products = () => {
       </>
     );
   };
-
   const FiltroOrdenaMaior = () => {
     const list = products
       .sort((a, b) => b.price - a.price)

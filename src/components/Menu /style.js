@@ -10,7 +10,11 @@ const Container = styled.div`
   align-items: center;
   border-bottom: 2px solid white;
   background: #ed4f1c;
-
+  .login {
+    position: absolute;
+    right: 98px;
+    top: 50px;
+  }
   input {
     text-align: center;
     height: 30px;

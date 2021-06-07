@@ -31,6 +31,7 @@ const Menu = () => {
         <button type="submit" onClick={handlerSearch}>
           Procurar
         </button>
+
         <div className="carrinho" onClick={() => sendTo("/Carrinho")}>
           <i class="fas fa-shopping-cart fa-2x"></i>
         </div>
